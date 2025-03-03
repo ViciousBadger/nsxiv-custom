@@ -14,11 +14,13 @@ interface and adding simple, sensible features. nsxiv is free software licensed
 under GPL-2.0-or-later and aims to be easy to modify and customize.
 
 Please file a bug report if something does not work as documented or expected on
-[Codeberg] after making sure you are using the latest release. Contributions
-are welcome, see [CONTRIBUTING] to get started.
+[Codeberg] after making sure you are using the latest release. If you're looking
+to migrate from `sxiv`, see [MIGRATION]. Contributions are welcome, see
+[CONTRIBUTING] to get started.
 
 [Codeberg]: https://codeberg.org/nsxiv/nsxiv/issues/new
 [CONTRIBUTING]: etc/CONTRIBUTING.md#contribution-guideline
+[MIGRATION]: etc/MIGRATION.md
 
 
 Features
@@ -81,8 +83,8 @@ you want to build nsxiv on a distribution with separate runtime and development
 packages (e.g. \*-dev on Debian).
 
 \* [inotify][] is a Linux-specific API for monitoring filesystem changes.
-  It's not natively available on `*BSD` systems but can be enabed via installing
-  and linking against [libinotify-kqueue][].
+  It's not natively available on `*BSD` systems but can be enabled via
+  installing and linking against [libinotify-kqueue][].
 
 [inotify]: https://www.man7.org/linux/man-pages/man7/inotify.7.html
 [libinotify-kqueue]: https://github.com/libinotify-kqueue/libinotify-kqueue

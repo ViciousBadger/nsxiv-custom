@@ -70,6 +70,14 @@ static const bool ANTI_ALIAS = true;
  */
 static const bool ALPHA_LAYER = false;
 
+/* list of whitelisted/blacklisted directory for thumbnail cache
+ * (overwritten via --cache-{allow,deny} option).
+ * see THUMBNAIL CACHING section in nsxiv(1) manpage for more details.
+ */
+static const char TNS_FILTERS[] = "";
+/* set to true to treat `TNS_FILTERS` as a blacklist instead */
+static const bool TNS_FILTERS_IS_BLACKLIST = false;
+
 #endif
 #ifdef INCLUDE_THUMBS_CONFIG
 
@@ -188,6 +196,8 @@ static const button_t buttons_img[] = {
 	{ 0,            2,                g_switch_mode,        None },
 	{ 0,            4,                g_zoom,               +1 },
 	{ 0,            5,                g_zoom,               -1 },
+	{ 0,            8,                i_fit_to_win,         SCALE_FIT },
+	{ 0,            9,                i_fit_to_win,         SCALE_FILL },
 };
 
 /* mouse button mappings for thumbnail mode: */
@@ -199,6 +209,8 @@ static const button_t buttons_tns[] = {
 	{ 0,            5,                t_scroll,             DIR_DOWN },
 	{ ControlMask,  4,                g_scroll_screen,      DIR_UP },
 	{ ControlMask,  5,                g_scroll_screen,      DIR_DOWN },
+	{ 0,            8,                g_zoom,               -1 },
+	{ 0,            9,                g_zoom,               +1 },
 };
 
 /* true means NAV_WIDTH is relative (33%), false means absolute (33 pixels) */
